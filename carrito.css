@@ -1,0 +1,62 @@
+/* Estilos generales para el header */
+body {
+    background-color: #fffbf1;
+    font-family: "Libre Franklin", sans-serif;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fffbf1;
+    padding: 5px 20px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    align-self: left;
+}
+
+.nombre {
+    flex: 1;
+    text-align: center;
+}
+
+.nombre h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    margin-top: 10px;
+}
+
+.nombre h1:hover {
+    color: #9d815c;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.icono {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.icono img:hover {
+    transform: scale(1.1);
+}
+
+.icono img {
+    height: 30px;
+    width: 30px;
+}
