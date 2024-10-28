@@ -37,26 +37,3 @@ header {
 .nombre h1:hover {
     color: #9d815c;
 }
-
-/* Estilos para la barra de navegación */
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.icono {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-}
-
-.icono img:hover {
-    transform: scale(1.1);
-}
-
-.icono img {
-    height: 30px;
-    width: 30px;
-}
