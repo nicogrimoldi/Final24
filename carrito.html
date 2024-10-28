@@ -20,8 +20,33 @@
             <div class= "nombre">
                 <a href="index.html" style="text-decoration: none;"><h1>Zapatitos</h1></a>
             </div>
-            <div class="icono">
-                <a href="carrito.html"><img src="Logos\Carrito.png" alt="Carrito"></a>
-            </div>
         </nav>
     </header>
+
+    <main>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Marca</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="contenido-carrito" class="content"></tbody>
+            </table>
+            <div>
+                <h3>Total: $<span id="total-carrito">0</span></h3>
+            </div>
+            <button id="vaciar-carrito" class="vaciar">Vaciar Carrito</button>
+            <button id="checkout-btn" class="comprar">Comprar</button>
+        </div>
+    </main>
+
+    <script src="scripts\mostrarCarrito.js"></script>
+</body>
+
+</html>
