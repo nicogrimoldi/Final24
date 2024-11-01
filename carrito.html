@@ -7,7 +7,7 @@
     <title>Zapatitos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles\paginaPpal.css">
+    <link rel="stylesheet" href="styles/carrito.css">
     <link rel="icon" href="Logos\logo zapatitos blanco.png" type="image/x-icon">
 </head>
 
@@ -23,27 +23,45 @@
         </nav>
     </header>
 
-    <main>
-        <div class="container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Marca</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Total</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="contenido-carrito" class="content"></tbody>
-            </table>
-            <div>
+    <main class="container">
+        <div class="card shadow-lg border-0 rounded-3 overflow-hidden animate__animated animate__fadeInUp"  style="background-color: #fffbf1;">
+            <div class="scroll-container">
+                <table class="table table-striped table-borderless overflow-x-scroll">
+                    <thead>
+                        <tr>
+                            <th class="col-3" style="background-color: #9d815c; color: #fffbf1;">Producto</th>
+                            <th class="col-2" style="background-color: #9d815c; color: #fffbf1;">Marca</th>
+                            <th class="col-2" style="background-color: #9d815c; color: #fffbf1;">Precio</th>
+                            <th class="col-2" style="background-color: #9d815c; color: #fffbf1;">Cantidad</th>
+                            <th class="col-2" style="background-color: #9d815c; color: #fffbf1;">Total</th>
+                            <th class="col-1" style="background-color: #9d815c; color: #fffbf1;"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="contenido-carrito" class="content"></tbody>
+                </table>
+            </div>
+            <div class="total">
                 <h3>Total: $<span id="total-carrito">0</span></h3>
             </div>
-            <button id="vaciar-carrito" class="vaciar">Vaciar Carrito</button>
-            <button id="checkout-btn" class="comprar">Comprar</button>
+            <div class="acc">
+                <div class="col-sm-10 col-lg-11">
+                    <button id="vaciar-carrito">Vaciar Carrito</button>
+                </div>
+                <div>
+                    <button id="checkout-btn">Comprar</button>
+                </div>
+            </div>
         </div>
+
+        <div id="modalPagoExitoso" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" id="cerrarModal">&times;</span>
+                <h2>¡Pago exitoso!</h2>
+                <p>Tu pedido ha sido procesado.</p>
+                <button id="volverInicio" class="boton-principal">Volver a la página principal</button>
+            </div>
+        </div>
+
     </main>
 
     <script src="scripts\mostrarCarrito.js"></script>
