@@ -12,28 +12,28 @@ function mostrarCarrito() {
         const fila = document.createElement("tr");
 
         fila.innerHTML = `
-            <td>
+            <td style="background-color: #fffbf1;">
                 <div>${item.nombre}</div>
             </td>
-            <td>
+            <td style="background-color: #fffbf1;">
                 <div>${item.marca}</div>
             </td>
-            <td>
+            <td style="background-color: #fffbf1;">
                 <div>$${item.precio.toLocaleString()}</div>
             </td>
-            <td>
+            <td style="background-color: #fffbf1;">
                 <div>
                     <button class="btn btn-decrementar" onclick="actualizarCantidad(${index}, -1)">-</button>
                     ${item.cantidad}
                     <button class="btn btn-incrementar" onclick="actualizarCantidad(${index}, 1)">+</button>
                 </div>
             </td>
-            <td>
+            <td style="background-color: #fffbf1;">
                 <div>$${(item.precio * item.cantidad).toLocaleString()}</div>
             </td>
-            <td>
-                <div>
-                    <button class="btn btn-eliminar" onclick="eliminarProducto(${index})">🗑️</button>
+            <td style="background-color: #fffbf1;">
+                <div style="align-items: center;>
+                    <button class="btn btn-eliminar" onclick="eliminarProducto(${index})">✖</button>
                 </div>
             </td>
         `;
@@ -46,7 +46,7 @@ function mostrarCarrito() {
 }
 
 function actualizarCantidad(index, cambio) {
-    if (carrito[index].cantidad + cambio >= 1) {  // Aseguramos que la cantidad mínima sea 1
+    if (carrito[index].cantidad + cambio >= 1) {
         carrito[index].cantidad += cambio;
         localStorage.setItem("carrito", JSON.stringify(carrito));
         mostrarCarrito();
@@ -67,6 +67,27 @@ document.getElementById("vaciar-carrito").addEventListener("click", () => {
     totalCarrito.textContent = "0";
 });
 
+document.getElementById("checkout-btn").addEventListener("click", function() {
 
-// Mostrar el carrito al cargar la página
+    const carritoVacio = document.getElementById("contenido-carrito").children.length === 0;
+    if (carritoVacio) {
+        return;
+    }
+
+    document.getElementById("modalPagoExitoso").style.display = "block";
+    localStorage.removeItem("carrito");
+    mostrarCarrito();
+    document.getElementById("contenido-carrito").innerHTML = "";
+    document.getElementById("total-carrito").innerText = "0";
+});
+
+document.getElementById("cerrarModal").addEventListener("click", function() {
+    document.getElementById("modalPagoExitoso").style.display = "none";
+});
+
+document.getElementById("volverInicio").addEventListener("click", function() {
+    window.location.href = "index.html";
+});
+
+
 mostrarCarrito();
